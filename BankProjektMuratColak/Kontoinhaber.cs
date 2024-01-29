@@ -19,7 +19,7 @@ namespace BankProjektMuratColak
         private string adres;
         private string phone;
         private string kontoType;
-        private List<IKonto> kontos;
+        private List<AbstractKonto> kontos;
         private List<string> log;
         private StandartKonto standart;
 
@@ -34,14 +34,14 @@ namespace BankProjektMuratColak
         public string IBAN1 { get => IBAN; set => IBAN = value; }
         public List<string> Log { get => log; set => log = value; }
         public double TotalGeld { get => totalGeld; set => totalGeld = value; }
-        internal List<IKonto> Kontos { get => kontos; set => kontos = value; }
+        internal List<AbstractKonto> Kontos { get => kontos; set => kontos = value; }
 
         public Kontoinhaber(string username)
         {
 
             this.username = username;
             count++;
-            kontos = new List<IKonto>(5);
+            kontos = new List<AbstractKonto>(5);
             standart = new StandartKonto(this, "ersteKonto");
             kontos.Add(standart);
 
